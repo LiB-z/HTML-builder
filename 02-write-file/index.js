@@ -11,6 +11,6 @@ stdin.on('data', data => {
 process.on( "SIGINT", function() {
     process.exit();
 });
-process.on('exit', () => stdout.write(`\n   Вы восхитительны!
+process.on('exit', () => stdout.write(`\n\n   Вы восхитительны!
     ☆*･｡*.･★*･｡*.･☆   ^     ^
                   乁( =•ㅅ •=乁) \n`));

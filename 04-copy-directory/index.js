@@ -9,7 +9,7 @@ function copyDir (origDirectory =__dirname, newDirectory =__dirname, newFolder =
             data.forEach((file) => {
                 fs.stat(path.join(origDirectory,origFolder,file),(err,data) => {
                     if(data.isDirectory()) {
-                        copyDir(path.join(newDirectory,origFolder),path.join(newDirectory,newFolder),file,file)
+                        copyDir(path.join(origDirectory,origFolder),path.join(newDirectory,newFolder),file,file)
                     };
                     fs.copyFile(path.join(origDirectory,origFolder,file), path.join(newDirectory,newFolder,file), (err,data) => {
                     });
