@@ -11,10 +11,10 @@ const RL = readline.createInterface({ input, output });
 
 RL.question('Введите текст для сохранения... \n', (data) => {
     if (data === 'exit') closeRL();
-    newFile.write(data + '\n');
+    newFile.write(data);
     RL.on('line', (text) => {
-        if (text === 'exit') closeRL();
-        newFile.write(text + '\n')
+        if (text === 'exit') closeRL()
+        else newFile.write('\n' + text);
     });
 });
 RL.on("SIGINT", () => {closeRL()});
